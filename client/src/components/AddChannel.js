@@ -8,7 +8,7 @@ const AddChannel = ({ mutate }) => {
     if (evt.keyCode === 13) {
       evt.persist();
       mutate({ 
-        variables: { name: evt.target.value },
+        variables: { content: evt.target.value },
         refetchQueries: [ { query: channelsListQuery }],
       })
       .then( res => {
@@ -27,10 +27,10 @@ const AddChannel = ({ mutate }) => {
 };
 
 const addChannelMutation = gql`
-  mutation addChannel($name: String!) {
-    addChannel(name: $name) {
+  mutation addChannel($content: String!) {
+    addChannel(content: $content) {
       id
-      name
+      content
     }
   }
 `;

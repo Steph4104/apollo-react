@@ -18,7 +18,7 @@ const schema = makeExecutableSchema({ typeDefs });
 addMockFunctionsToSchema({ schema });
 
 const networkInterface = createNetworkInterface({ 
-  uri: 'http://192.168.2.37:4000/graphql',
+  uri: 'http://192.168.1.50:4000/graphql',
 });
 
 const client = new ApolloClient({

@@ -6,19 +6,18 @@ const channels = [/*{
   name: 'baseball',
 }*/];
 
-
+import { Channel } from './connectors';
 let nextId = 3;
 export const resolvers = {
   Query: {
-    channels: () => {
-      return channels;
+    channels: (_, args) => {
+      return Channel.findAll({where: args});
     },
   },
   Mutation: {
-    addChannel: (root, args) => {
-      const newChannel = { id: nextId++, name: args.name };
-      channels.push(newChannel);
-      return newChannel;
+    addChannel: (_, args) => {
+    //  const newChannel = { id: nextId++, name: args.name };
+     return Channel.create(args);
     },
   },
 };

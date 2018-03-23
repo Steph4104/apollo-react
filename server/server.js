@@ -13,7 +13,7 @@ import cors from 'cors';
 const PORT = 4000;
 const server = express();
 
-server.use('*', cors({ origin: 'http://192.168.2.37:3000' }));
+server.use('*', cors({ origin: 'http://192.168.1.50:3000' }));
 
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema

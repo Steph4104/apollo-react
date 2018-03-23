@@ -18,7 +18,7 @@ const ChannelsList = ({ data: {loading, error, channels }}) => {
     <div className="channelsList">
       <AddChannel />
       { channels.map( ch => 
-        (<div key={ch.id} className="channel">{ch.name}</div>)
+        (<div key={ch.id} className="channel">{ch.content}</div>)
       )}
     </div>
   );
@@ -28,7 +28,7 @@ export const channelsListQuery = gql`
   query ChannelsListQuery {
     channels {
       id
-      name
+      content
     }
   }
 `;
